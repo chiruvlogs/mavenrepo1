@@ -1,0 +1,31 @@
+pipeline {
+	agent any
+	
+	stages {
+		stage('stage1: Print') {
+			steps {
+				cho "Hello, from chiru"
+				}
+			}
+		}
+	stages {
+		stage('stage2: Checkout'){
+			steps {
+				checkout([$class: 'GitSCM', branches: [[name: '*/master']],extension: [], userRemoteConfig: [[url: 'https://github.com/amitvermaa93/jenkins-git-integration.git']]])
+				}
+					}
+		}
+	stages {
+		stage('stage3: Maven'){
+			steps {
+				sh "mvn clean verify"
+				}
+					}
+		}
+	post {
+		always{
+			echo 'Thanks for running the job'
+			}
+		}
+}
+
