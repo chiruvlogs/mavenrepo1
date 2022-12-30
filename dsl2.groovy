@@ -8,7 +8,7 @@
      //       node / gitConfigEmail('saichiranjeevi.originhubs@gmail.com')
     //}
   //  }
-pipelineJob{
+pipelineJob('generatejob2') {
 description("This is the task realted to automating creating job using dsl and then executing tasks related to shared repo");
     definition{
         cpsScm {
