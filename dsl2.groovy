@@ -24,5 +24,5 @@ description("This is the task realted to automating creating job using dsl and t
             }
             scriptPath('chirujenkinfile1')
          }
-    //  }
+     }
   // }
